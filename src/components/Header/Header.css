@@ -1,0 +1,10 @@
+.navbar {
+  height: 50px;
+  font-size: 16px;
+  box-shadow: 0px 2px 10px 0px rgba(204, 204, 204, 0.75); }
+  .navbar .nav li > a {
+    color: #fff;
+    background: #aab20a; }
+    .navbar .nav li > a:hover, .navbar .nav li > a.active {
+      color: #fff;
+      background: #8c8800; }

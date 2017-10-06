@@ -1,0 +1,22 @@
+@import '../../styles/constants.scss';
+
+.navbar {
+  height: 50px;
+
+  font-size: 16px;
+
+  box-shadow: 0px 2px 10px 0px rgba($col-grey-2, .75);  
+
+  .nav {
+    li > a {
+      color: $col-white;
+      background: $col-success-2;
+
+      &:hover,
+      &.active {
+        color: $col-white;
+        background: $col-success-3;
+      }
+    }
+  }
+}
