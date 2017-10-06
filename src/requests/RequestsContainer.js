@@ -1,12 +1,14 @@
-import React from 'react'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 import {
   fetchData,
   filter  
 } from './RequestsActions';
-import REQUEST_STATUS from './RequestStatus';
+
+import RequestsList from './RequestsList';
+import RequestsFilter from './RequestsFilter';
 
 class RequestsContainer extends React.Component {
   componentDidMount() {
@@ -15,13 +17,16 @@ class RequestsContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container-fluid">
+        <h1>REQUESTS</h1>
+        
         {
           this.props.isLoading ? 
             <h2>Loading...</h2> : 
-            <div className="container-fluid">
-              This is requests!
-            </div>
+            <div>
+              <RequestsFilter onFilter={ this.props.filter } filterBy={ this.props.filterBy } />
+              <RequestsList data={ this.props.requests } />
+            </div>            
         }
       </div>
     )
@@ -32,6 +37,7 @@ class RequestsContainer extends React.Component {
 const mapStateToProps = state => {
   return {
     isLoading: state.requests.isLoading,
+    filterBy: state.requests.filterBy,
     requests: state.requests.data.filter(req => !state.requests.filterBy || req.status === state.requests.filterBy)
   }
 }

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab");
+@import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab|Roboto+Regular");
 .navbar {
   height: 50px;
   font-size: 16px;
@@ -13,4 +13,26 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Roboto, sans-serif; }
+  font-family: 'Roboto Regular', sans-serif; }
+  body main {
+    max-width: 890px;
+    margin: 0 auto; }
+
+.label {
+  display: inline-block;
+  width: 60px;
+  height: 26px;
+  margin: 0;
+  padding: 4px 8px;
+  min-width: 70px;
+  line-height: 18px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #fff;
+  border-radius: 3px; }
+  .label.label-denied {
+    background: #cb3535; }
+  .label.label-pending {
+    background: #444444; }
+  .label.label-approved {
+    background: #aab20a; }
