@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom'
 
+import './Header.css';
+
 export default () => (
   <nav className="navbar navbar-default">
     <div className="container-fluid">

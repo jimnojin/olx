@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab|Roboto+Regular');
 
-@import './constants.scss';
-@import '../components/Header/Header.scss';
-
-
 body {
   margin: 0;
   padding: 0;
@@ -13,30 +9,4 @@ body {
     max-width: 890px;
     margin: 0 auto;
   }
-}
-
-.label {
-  display: inline-block;
-  width: 60px;
-  height: 26px;
-  margin: 0;
-  padding: 4px 8px;
-  min-width: 70px;
-  line-height: 18px;
-  font-size: 12px;
-  font-weight: normal;
-  color: $col-white;
-  border-radius: 3px;
-
-  &.label-denied {
-    background: $col-error-2;
-  }
-
-  &.label-pending {
-    background: $col-secondary-2;
-  }
-
-  &.label-approved {
-    background: $col-success-2;
-  }  
 }

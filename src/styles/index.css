@@ -1,15 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab|Roboto+Regular");
-.navbar {
-  height: 50px;
-  font-size: 16px;
-  box-shadow: 0px 2px 10px 0px rgba(204, 204, 204, 0.75); }
-  .navbar .nav li > a {
-    color: #fff;
-    background: #aab20a; }
-    .navbar .nav li > a:hover, .navbar .nav li > a.active {
-      color: #fff;
-      background: #8c8800; }
-
 body {
   margin: 0;
   padding: 0;
@@ -17,22 +6,3 @@ body {
   body main {
     max-width: 890px;
     margin: 0 auto; }
-
-.label {
-  display: inline-block;
-  width: 60px;
-  height: 26px;
-  margin: 0;
-  padding: 4px 8px;
-  min-width: 70px;
-  line-height: 18px;
-  font-size: 12px;
-  font-weight: normal;
-  color: #fff;
-  border-radius: 3px; }
-  .label.label-denied {
-    background: #cb3535; }
-  .label.label-pending {
-    background: #444444; }
-  .label.label-approved {
-    background: #aab20a; }
