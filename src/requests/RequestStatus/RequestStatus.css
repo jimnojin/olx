@@ -1,0 +1,19 @@
+label.label {
+  display: inline-block;
+  width: 60px;
+  height: 26px;
+  margin: 0;
+  padding: 4px 8px;
+  min-width: 70px;
+  line-height: 18px;
+  font-size: 12px;
+  font-weight: normal;
+  text-align: center;
+  text-transform: capitalize;
+  color: #fff;
+  background: #444444;
+  border-radius: 3px; }
+  label.label.label--denied {
+    background: #cb3535; }
+  label.label.label--approved {
+    background: #a9b20a; }

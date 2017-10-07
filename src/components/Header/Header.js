@@ -13,6 +13,7 @@ export default () => (
       <ul className="nav navbar-nav navbar-right">
         <li><NavLink to="/" exact>Home</NavLink ></li>
         <li><NavLink to="/requests" exact>Requests</NavLink ></li>
+        <li><NavLink to="/manage" exact>Manage</NavLink ></li>
       </ul>
     </div>
   </nav>

@@ -1,0 +1,14 @@
+.nav.requests-filter > li > a {
+  width: 160px;
+  border-radius: 0;
+  font-family: Avenir;
+  font-size: 16px;
+  text-align: center;
+  color: #444444;
+  background: #fff; }
+
+.nav.requests-filter > li.active > a,
+.nav.requests-filter > li > a:hover {
+  color: #444444;
+  background: #fff;
+  border-bottom: 4px solid #444444; }

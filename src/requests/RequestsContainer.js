@@ -6,9 +6,10 @@ import {
   fetchData,
   filter  
 } from './RequestsActions';
-
 import RequestsList from './RequestsList';
-import RequestsFilter from './RequestsFilter';
+import RequestsFilter from './RequestsFilter/RequestsFilter';
+
+import './RequestsContainer.css';
 
 class RequestsContainer extends React.Component {
   componentDidMount() {
@@ -17,7 +18,7 @@ class RequestsContainer extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid">
+      <div className="requests-container container-fluid">
         <h1>REQUESTS</h1>
         
         {
@@ -25,6 +26,7 @@ class RequestsContainer extends React.Component {
             <h2>Loading...</h2> : 
             <div>
               <RequestsFilter onFilter={ this.props.filter } filterBy={ this.props.filterBy } />
+              <div className="well">Pending requests</div>
               <RequestsList data={ this.props.requests } />
             </div>            
         }

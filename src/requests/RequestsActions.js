@@ -2,7 +2,7 @@ import {
   IS_LOADING,
   FETCH_SUCCESS,
   FILTER
-} from './RequestsReducers';
+} from './constants';
 
 export const isLoading = bool => {
   return {

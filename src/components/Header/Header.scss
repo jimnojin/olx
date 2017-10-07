@@ -5,17 +5,17 @@
 
   font-size: 16px;
 
-  box-shadow: 0px 2px 10px 0px rgba($col-grey-2, .75);  
+  box-shadow: 0px 2px 10px 0px rgba($col-grey-normal, .75);  
 
   .nav {
     li > a {
       color: $col-white;
-      background: $col-success-2;
+      background: $col-success-normal;
 
       &:hover,
       &.active {
         color: $col-white;
-        background: $col-success-3;
+        background: $col-success-dark;
       }
     }
   }

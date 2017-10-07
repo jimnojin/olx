@@ -1,0 +1,9 @@
+.requests-container .well {
+  padding: 16px;
+  border: 0;
+  font-family: Avenir;
+  font-size: 16px;
+  border-radius: 0;
+  background: #a9b20a;
+  color: #fff;
+  text-transform: uppercase; }

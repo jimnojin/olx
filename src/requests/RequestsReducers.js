@@ -1,12 +1,9 @@
-export const FILTER = 'requests/FILTER';
-export const IS_LOADING = 'requests/IS_LOADING';
-export const FETCH_SUCCESS = 'requests/FETCH_SUCCESS';
-
-const initialState = {
-  isLoading: true,
-  data: [],
-  filterBy: null
-}
+import initialState from './initialState';
+import {
+  FILTER,
+  IS_LOADING,
+  FETCH_SUCCESS
+} from './constants';
 
 /** Reducer */
 export default (state = initialState, action) => {

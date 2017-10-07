@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "user_id",
+    "description": "descr",
+    "type": "integer",
+    "isPrivite": false,
+    "values": [] 
+  },
+  {
+    "id": 2,
+    "name": "item_id",
+    "description": "ala bala",
+    "type": "float",
+    "isPrivite": true,
+    "values": [] 
+  }    
+]

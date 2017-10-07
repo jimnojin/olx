@@ -1,0 +1,22 @@
+@import '../../styles/constants.scss';
+
+.nav.requests-filter {
+  > li {
+    > a {
+      width: 160px;
+      border-radius: 0;
+      font-family: Avenir;
+      font-size: 16px;
+      text-align: center;
+      color: $col-secondary-normal;
+      background: $col-white;      
+    } 
+
+    &.active > a,
+    > a:hover {
+      color: $col-secondary-normal;
+      background: $col-white;
+      border-bottom: 4px solid $col-secondary-normal;
+    }
+  } 
+}
