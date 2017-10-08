@@ -2,11 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const KeyList = props => {
-  console.log(props.keys);
   const items = props.keys.map(k => {
-    const classList = `list-group-item ${k.isSelected ? 'active' : ''}`;
-
-    return <li className={ classList } key={ k.id } onClick={ () => props.onSelect(k.id) }>{ k.name }</li>;
+    const classList = `list-group-item ${k.id === props.selected.id ? 'active' : ''}`;
+    return <li className={ classList } key={ k.id } onClick={ () => props.onSelect(k) }>{ k.name }</li>;
   });
 
   return (
@@ -18,7 +16,8 @@ const KeyList = props => {
 
 KeyList.propTypes = {
   keys: PropTypes.array.isRequired,
-  onSelect: PropTypes.func.isRequired
+  onSelect: PropTypes.func.isRequired,
+  selected: PropTypes.object
 }
 
 export default KeyList;

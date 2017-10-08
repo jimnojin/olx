@@ -1,15 +1,20 @@
-import initialState from './initialState';
+import { 
+  MANAGE_DEFAULT_STATE,
+  KEY_DEFAULT_STATE
+ } from './initialState';
 import {
   IS_LOADING,
   FETCH_SUCCESS,
+  
   SELECT_KEY,
-  TOGGLE_EDIT,
-  SAVE_KEY,
-  ADD_VALUE
+  NEW_KEY,
+  EDIT_KEY,
+  CANCEL_EDIT,
+  SAVE_KEY
 } from './constants';
 
-/** Reducer */
-export default (state = initialState, action) => {
+/** Reducer for manage container */
+export const manageReducer = (state = MANAGE_DEFAULT_STATE, action) => {
   switch (action.type) {
     case IS_LOADING:
       return {
@@ -21,40 +26,49 @@ export default (state = initialState, action) => {
       return {
         ...state,
         data: action.payload
-      };
+      };   
     
-    case SELECT_KEY:
-      if (!state.data || state.data.length === 0) {
-        return state;
-      }  
-      const selectedId = action.payload ? action.payload : state.data[0].id;
-
-      return {
-        ...state,
-        data: state.data.map(key => {
-          return {
-            ...key,
-            isSelected: key.id === selectedId
-          };
-        })
-      };
-
-    case TOGGLE_EDIT:
-      return {
-        ...state,
-        isEditing: action.payload
-      };
     case SAVE_KEY:
+      const isUpdate = state.data.find(key => key.id === action.payload.id);
+
+      if (isUpdate) {
+        return {
+          ...state,
+          data: state.data.map(key => key.id === action.payload.id ? { ...key, ...action.payload } : key)
+        }
+      } 
+
       return {
         ...state,
         data: [...state.data, action.payload]
-      };
-    case ADD_VALUE:
+      }
+
+    default:
+      return state
+  }
+}
+
+/** Reducer for key manipulation */
+export const keyReducer = (state = KEY_DEFAULT_STATE, action) => {
+  switch (action.type) {
+    case SELECT_KEY:
       return {
         ...state,
-        // @todo
+        selected: action.payload
       };
 
+    case EDIT_KEY:
+      return {
+        ...state,
+        isEditing: true
+      };
+
+    case CANCEL_EDIT:
+      return {
+        ...state,
+        isEditing: false
+      };   
+    
     default:
       return state
   }

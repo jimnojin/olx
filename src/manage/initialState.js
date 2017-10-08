@@ -1,15 +1,9 @@
-import { KEY_TYPE } from './constants';
-
-export default {
+export const MANAGE_DEFAULT_STATE = {
   isLoading: true,
-  isEditing: false,
-  data: [
-    {
-      name: 'user_id',
-      description: 'descr',
-      type: KEY_TYPE.INTEGER,
-      isPrivite: false, // sensitivity
-      values: [] // @todo array of allowed types
-    }    
-  ]  
+  data: []  
+}
+
+export const KEY_DEFAULT_STATE = {
+  selected: {},
+  isEditing: false
 }

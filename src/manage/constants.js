@@ -1,10 +1,14 @@
+import uuid from 'uuid/v4';
+
 /** Action types */
 export const IS_LOADING = 'manage/IS_LOADING';
 export const FETCH_SUCCESS = 'manage/FETCH_SUCCESS';
-export const SELECT_KEY = 'manage/SELECT_KEY';
-export const TOGGLE_EDIT = 'manage/TOGGLE_EDIT';
 export const SAVE_KEY = 'manage/SAVE_KEY';
-export const ADD_VALUE = 'manage/ADD_VALUE';
+
+export const SELECT_KEY = 'manage/key/SELECT_KEY';
+export const NEW_KEY = 'manage/key/NEW_KEY';
+export const CANCEL_EDIT = 'manage/key/CANCEL_EDIT';
+export const EDIT_KEY = 'manage/key/EDIT_KEY';
 
 export const KEY_TYPE = {
   VOID: 'void',
@@ -15,3 +19,22 @@ export const KEY_TYPE = {
   STRING: 'string',
   function: 'function'
 };
+
+/** Key Data Object */
+export class Key {
+  constructor({
+    id = uuid(),
+    name,
+    description,
+    type = KEY_TYPE.VOID,
+    isPrivate,
+    values = []
+  } = {}) {
+    this.id = id;
+    this.name = name;
+    this.description = description;
+    this.type = type;
+    this.isPrivate = isPrivate;
+    this.values = values;
+  }
+}

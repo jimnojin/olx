@@ -8,7 +8,7 @@ const KeyView = props => {
     <div className="panel">
       <div className="panel-body">
         <h2>{ props.item.name }</h2>
-
+        
         <div>
           <h3>Description</h3>
           <p>{ props.item.description }</p>
@@ -22,7 +22,7 @@ const KeyView = props => {
         <div>
           <h3>Sensitivity</h3>
           <p>{ 
-            props.item.isPrivite ? 
+            props.item.isPrivate ? 
             'This is personal data and cannot be disturbuted in raw form.' :  
             'This is not personal data and can be disturbuted in raw form'
             }</p>

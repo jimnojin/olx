@@ -4,7 +4,7 @@
     "name": "user_id",
     "description": "descr",
     "type": "integer",
-    "isPrivite": false,
+    "isPrivate": false,
     "values": [] 
   },
   {
@@ -12,7 +12,7 @@
     "name": "item_id",
     "description": "ala bala",
     "type": "float",
-    "isPrivite": true,
+    "isPrivate": true,
     "values": [] 
   }    
 ]
