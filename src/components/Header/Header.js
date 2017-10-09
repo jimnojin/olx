@@ -9,7 +9,7 @@ export default () => (
       <div className="navbar-header">
         <Link to="/" className="navbar-brand">DATA GATE</Link>
       </div>
-      <p class="navbar-text navbar-right">
+      <p className="navbar-text navbar-right">
         <span className="fa fa-bell" />
         <span className="fa fa-cog" />
         <span className="fa fa-user" />
@@ -19,8 +19,6 @@ export default () => (
         <li><NavLink to="/requests" exact>Requests</NavLink ></li>
         <li><NavLink to="/manage" exact>Manage</NavLink ></li>
       </ul>
-      
-     
     </div>
   </nav>
 )

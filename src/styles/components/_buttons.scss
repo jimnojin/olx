@@ -161,8 +161,8 @@
   }
 
   /** Icon addon to the left */
-  > .fa {
-    margin-right: 8px;
+  > .fa + span {
+    margin-left: 8px;
   }
 
 

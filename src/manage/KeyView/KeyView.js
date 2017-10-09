@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import KeyValues from '../KeyEditContainer/KeyValues';
 
 import './KeyView.css';
 
@@ -13,31 +14,34 @@ const KeyView = props => {
   return (
     <div className="panel">
       <div className="panel-body">
-        <h2>{ props.item.name }</h2>
-        
-        <button className="btn btn-success"  onClick={props.onEditKey} style={ styles }> 
-          <span className="fa fa-pencil" />Edit
+        <h2>{props.item.name}</h2>
+
+        <button className="btn btn-success" onClick={props.onEditKey} style={styles}>
+          <span className="fa fa-pencil" />
+          <span>Edit</span>
         </button>
 
         <div>
           <h3>Description</h3>
-          <p>{ props.item.description }</p>
+          <p>{props.item.description}</p>
         </div>
 
         <div>
           <h3>Type</h3>
-          <p>{ props.item.type }</p>
+          <p>{props.item.type}</p>
         </div>
 
         <div>
           <h3>Sensitivity</h3>
-          <p>{ 
-            props.item.isPrivate ? 
-            'This is personal data and cannot be disturbuted in raw form.' :  
-            'This is not personal data and can be disturbuted in raw form'
-            }</p>
+          <p>{
+            props.item.isPrivate ?
+              'This is personal data and cannot be disturbuted in raw form.' :
+              'This is not personal data and can be disturbuted in raw form'
+          }</p>
         </div>
-      </div>      
+
+        {props.item.values.length > 0 && <KeyValues values={props.item.values} />}
+      </div>
     </div>
   );
 };

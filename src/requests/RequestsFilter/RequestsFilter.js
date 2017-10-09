@@ -23,7 +23,8 @@ export default props => {
         {states}
         <li role="presentation">
           <button className="btn btn-hollow btn-success btn-size-tiny">
-            <span className="fa fa-plus" />Create new request
+            <span className="fa fa-plus" />
+            <span>Create new request</span>
           </button>
         </li>
       </ul>

@@ -1,4 +1,4 @@
-export { default as KeyEditView } from './KeyEditView/KeyEditView';
+export { default as KeyEditContainer } from './KeyEditContainer/KeyEditContainer';
 export { default as KeyList } from './KeyList/KeyList';
 export { default as KeyView } from './KeyView/KeyView';
 export { default as ManageContainer } from './ManageContainer/ManageContainer';

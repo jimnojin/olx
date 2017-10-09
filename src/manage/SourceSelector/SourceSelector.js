@@ -25,7 +25,8 @@ export default () => {
           <Select options={ platforms } />
           
           <button className="btn btn-secondary btn-hollow btn-size-small">
-            <span className="fa fa-plus" />Add data source
+            <span className="fa fa-plus" />
+            <span>Add data source</span>
           </button>
 
           <button className="btn btn-secondary btn-size-small pull-right">

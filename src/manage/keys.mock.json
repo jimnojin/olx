@@ -5,7 +5,10 @@
     "description": "descr",
     "type": "integer",
     "isPrivate": false,
-    "values": [] 
+    "values": [
+      { "id": 1, "value": "null", "description": "No user" },
+      { "id": 2, "value": "{integer}", "description": "ID key of duser" }
+    ] 
   },
   {
     "id": 2,

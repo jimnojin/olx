@@ -1,12 +1,16 @@
+import uuid from 'uuid/v4';
 import {
   Key,
   IS_LOADING,
   FETCH_SUCCESS,
-  
+
   SELECT_KEY,
   EDIT_KEY,
   CANCEL_EDIT,
-  SAVE_KEY
+  SAVE_KEY,
+  ADD_VALUE,
+  SAVE_VALUE,
+  DELETE_VALUE
 } from './constants';
 
 /** Manage actions */
@@ -44,33 +48,33 @@ export function fetchSuccess(data) {
 export function selectKey(key) {
   return dispatch => {
     // reset edit state
-    dispatch(cancelEdit()); 
-    
+    dispatch(cancelEdit());
+
     // select new key
     dispatch({
       type: SELECT_KEY,
       payload: key
     });
   }
-} 
+}
 
 export function addKey() {
   const key = new Key();
 
   return dispatch => {
     // reset edit state
-    dispatch(cancelEdit()); 
-    
+    dispatch(cancelEdit());
+
     dispatch(selectKey(key));
     dispatch(editKey(key));
   };
-} 
+}
 
 export function editKey() {
   return {
     type: EDIT_KEY
   };
-} 
+}
 
 export function saveKey(key) {
   return dispatch => {
@@ -86,10 +90,31 @@ export function saveKey(key) {
     /* clear edit flag */
     dispatch(cancelEdit());
   };
-} 
+}
 
 export function cancelEdit() {
   return {
     type: CANCEL_EDIT
   };
+}
+
+export function addValue() {
+  return {
+    type: ADD_VALUE,
+    payload: { id: uuid(), value: '', description: '', isEditing: true } // or make it object like Key
+  };  
+} 
+
+export function saveValue(value) {
+  return {
+    type: SAVE_VALUE,
+    payload: value
+  };  
+} 
+
+export function deleteValue(value) {
+  return {
+    type: DELETE_VALUE,
+    payload: value
+  };  
 } 

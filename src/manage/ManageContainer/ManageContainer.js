@@ -15,7 +15,7 @@ import {
   SourceSelector,
   KeyList,
   KeyView,
-  KeyEditView
+  KeyEditContainer
  } from '../';
 
 class ManageContainer extends React.Component {
@@ -25,7 +25,7 @@ class ManageContainer extends React.Component {
 
   render() {
     const keyView = this.props.isEditing ?
-      <KeyEditView item={this.props.selectedKey} onFormSubmit={this.props.saveKey} /> :
+      <KeyEditContainer /> :
       <KeyView item={this.props.selectedKey} onEditKey={this.props.editKey}/>;
     return (
       <div>
@@ -40,7 +40,8 @@ class ManageContainer extends React.Component {
                 <KeyList keys={this.props.data} onSelect={key => this.props.selectKey(key)} selected={this.props.selectedKey} />
 
                 <button className="btn btn-hollow btn-size-small btn-secondary" onClick={this.props.addKey}>
-                  <span className="fa fa-plus"></span>Add key
+                  <span className="fa fa-plus"></span>
+                  <span>Add key</span>
                 </button>
               </div>
               <div className="col-md-9">

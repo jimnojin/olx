@@ -1,16 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import {
+  saveKey,
+  addValue,
+  deleteValue,
+  saveValue
+} from '../actions';
 
 import {
   Key,
   KEY_TYPE
 } from '../constants';
-import Permissions from './Permissions';
+import KeyValues from './KeyValues';
 import Select from '../../components/Select/Select';
 
-import './KeyEditView.css';
+import './KeyEditContainer.css';
 
-class KeyEditView extends React.Component {
+class KeyEditContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,6 +35,17 @@ class KeyEditView extends React.Component {
       key: new Key(this.props.item),
       initialKey: new Key(this.props.item)
     });
+  }
+
+  componentWillReceiveProps(props) {
+    if (props.item) {
+      this.setState({
+        key: {
+          ...this.state.key,
+          values: props.item.values
+        }
+      });
+    }
   }
 
   /**
@@ -46,16 +65,35 @@ class KeyEditView extends React.Component {
     });
   }
 
+  handleValueInputChange(event) {
+    const currentValue = this.state.key.values.find(v => v.isEditing);
+    const name = event.target.name;
+
+    this.setState({
+      key: {
+        ...this.state.key,
+        values: this.state.key.values.map(v => {
+          if (v.id === currentValue.id) {
+            return {
+              ...v,
+              [name]: event.target.value
+            };
+          }
+          return v;
+        })
+      }
+    });
+  }
+
   /**
    * Check for form data validity and triggers submit on parent
    * @param {Event} e 
    */
   onSubmit(e) {
-    debugger;
     e.preventDefault();
 
     if (this.isValid()) {
-      this.props.onFormSubmit(this.state.key);
+      this.props.saveKey(this.state.key);
     }
   }
 
@@ -67,14 +105,14 @@ class KeyEditView extends React.Component {
     let errors = this.state.errors;
 
     if (!this.state.key.name) {
-      errors = { ...errors, name: 'Field is required'};
+      errors = { ...errors, name: 'Field is required' };
       isValid = false;
     } else {
       delete errors.name;
     }
 
     if (!this.state.key.description) {
-      errors = { ...errors, description: 'Field is required'};
+      errors = { ...errors, description: 'Field is required' };
       isValid = false;
     } else {
       delete errors.description;
@@ -109,8 +147,9 @@ class KeyEditView extends React.Component {
       <div className="key-edit-view panel" >
         <div className="panel-body">
           <form onSubmit={e => this.onSubmit(e)}>
-            <button className="btn btn-success"  type="submit" style={ styles }> 
-              <span className="fa fa-floppy-o" />Save
+            <button className="btn btn-success" type="submit" style={styles}>
+              <span className="fa fa-floppy-o" />
+              <span>Save</span>
             </button>
 
             <div className="form-group">
@@ -118,9 +157,7 @@ class KeyEditView extends React.Component {
                 <label className="textfield-label" htmlFor="name">
                   Key name
                   {
-                    this.state.errors.name ?
-                      <div className="textfield-help error">{ this.state.errors.name }</div> :
-                      ''
+                    this.state.errors.name && <div className="textfield-help error">{this.state.errors.name}</div>
                   }
                 </label>
                 <div className="textfield-area">
@@ -134,9 +171,7 @@ class KeyEditView extends React.Component {
                 <label className="textfield-label" htmlFor="description">
                   Description
                   {
-                    this.state.errors.description ?
-                      <div className="textfield-help error">{ this.state.errors.description }</div> :
-                      ''
+                    this.state.errors.description && <div className="textfield-help error">{this.state.errors.description}</div>
                   }
                 </label>
                 <div className="textfield-area">
@@ -161,19 +196,35 @@ class KeyEditView extends React.Component {
                 </label>
               </div>
             </div>
-
-            
-            <Permissions data={this.state.key.permissions} />
           </form>
+
+          <KeyValues values={this.state.key.values}
+            onAddValue={this.props.addValue}
+            onDeleteValue={this.props.deleteValue}
+            onSaveValue={this.props.saveValue}
+            onValueChange={e => this.handleValueInputChange(e)} />
         </div>
       </div>
     );
   }
 }
 
-KeyEditView.propTypes = {
-  item: PropTypes.object,
-  onFormSubmit: PropTypes.func
-};
+/** Redux mapping */
+const mapStateToProps = state => {
+  return {
+    item: state.key.selected
+  };
+}
 
-export default KeyEditView;
+const mapDispatchToProps = dispatch => bindActionCreators({
+  saveKey,
+  addValue,
+  deleteValue,
+  saveValue
+}, dispatch)
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(KeyEditContainer)
+

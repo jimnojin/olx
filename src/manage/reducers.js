@@ -9,7 +9,10 @@ import {
   SELECT_KEY,
   EDIT_KEY,
   CANCEL_EDIT,
-  SAVE_KEY
+  SAVE_KEY,
+  ADD_VALUE,
+  SAVE_VALUE,
+  DELETE_VALUE
 } from './constants';
 
 /** Reducer for manage container */
@@ -66,7 +69,45 @@ export const keyReducer = (state = KEY_DEFAULT_STATE, action) => {
       return {
         ...state,
         isEditing: false
-      };   
+      };
+      
+    case ADD_VALUE:
+      return {
+        ...state,
+        selected: {
+          ...state.selected,
+          values: [...state.selected.values, action.payload]
+        }
+      };
+
+    case SAVE_VALUE:
+      return {
+        ...state,
+        selected: {
+          ...state.selected,
+          values: state.selected.values.map(v => {
+            if (v.id === action.payload.id) {
+              return {
+                ...v,
+                isEditing: false,
+                value: action.payload.value,
+                description: action.payload.description
+              };
+            }
+
+            return v;
+          })
+        }
+      };
+
+    case DELETE_VALUE:
+      return {
+        ...state,
+        selected: {
+          ...state.selected,
+          values: state.selected.values.filter(v => v.id !== action.payload.id)
+        }
+      };
     
     default:
       return state
