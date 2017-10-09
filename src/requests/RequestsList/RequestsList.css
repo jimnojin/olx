@@ -1,0 +1,6 @@
+.table.requests-list > thead > tr > th:nth-child(1) {
+  width: 230px; }
+
+.table.requests-list > thead > tr > th:nth-child(3) {
+  width: 160px;
+  padding-right: 80px; }

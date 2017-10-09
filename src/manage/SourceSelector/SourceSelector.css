@@ -1,2 +1,7 @@
 .source-selector {
-  display: flex; }
+  display: flex;
+  align-items: center; }
+  .source-selector > * + * {
+    margin-left: 10px; }
+  .source-selector > *:last-child {
+    margin-left: auto; }

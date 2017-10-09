@@ -1,6 +1,8 @@
 import React from 'react';
 import Moment from 'react-moment';
-import RequestStatus from './RequestStatus/RequestStatus';
+import { RequestStatus } from '../';
+
+import './RequestsList.css';
 
 export default props => {
   const rows = props.data.map(row => (
@@ -12,7 +14,7 @@ export default props => {
   ))
 
   return (
-    <table className="table table-striped">
+    <table className="table table-striped requests-list">
       <thead>
         <tr>
           <th>Date</th>

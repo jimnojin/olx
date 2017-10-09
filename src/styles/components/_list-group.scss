@@ -1,0 +1,28 @@
+/** list-group */
+.list-group {
+  color: $col-white;
+
+  > li.list-group-item {
+    height: 40px;
+    background: $col-secondary-normal;
+    border-radius: 0;
+    border: 0;    
+    cursor: pointer;
+
+    &.active {
+      background: $col-success-normal;
+      border: 0;
+    }
+
+    &:hover:not(.active) {
+      background: $col-secondary-dark;
+    }
+
+    > .fa {
+      float: right;
+      height: 100%;
+      line-height: 1.4;
+      color: $col-white;
+    }
+  }
+}

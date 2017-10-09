@@ -1,0 +1,9 @@
+/** panels */
+.panel {
+  > .panel-body {
+    position: relative;
+    padding: 32px 46px;
+    border-radius: 0px;
+    border: 1px solid $col-grey-light;
+  }
+}

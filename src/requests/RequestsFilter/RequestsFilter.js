@@ -17,9 +17,16 @@ export default props => {
   const allClassName = !props.filterBy ? 'active' : '';
 
   return (
-    <ul className="requests-filter nav nav-pills">
-      <li role="presentation" className={allClassName} onClick={() => props.onFilter()}><a>ALL</a></li>
-      {states}
-    </ul>
+    <div className="requests-filter">
+      <ul className="nav nav-pills">
+        <li role="presentation" className={allClassName} onClick={() => props.onFilter()}><a>ALL</a></li>
+        {states}
+        <li role="presentation">
+          <button className="btn btn-hollow btn-success btn-size-tiny">
+            <span className="fa fa-plus" />Create new request
+          </button>
+        </li>
+      </ul>
+    </div>    
   )
 };

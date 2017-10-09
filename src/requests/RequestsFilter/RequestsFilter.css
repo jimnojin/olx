@@ -1,14 +1,10 @@
-.nav.requests-filter > li > a {
-  width: 160px;
-  border-radius: 0;
-  font-family: Avenir;
-  font-size: 16px;
-  text-align: center;
-  color: #444444;
-  background: #fff; }
-
-.nav.requests-filter > li.active > a,
-.nav.requests-filter > li > a:hover {
-  color: #444444;
-  background: #fff;
-  border-bottom: 4px solid #444444; }
+.requests-filter {
+  height: 46px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e7e7e7; }
+  .requests-filter .nav > li:last-child {
+    float: right; }
+  .requests-filter .btn {
+    font-family: Avenir;
+    text-transform: none;
+    letter-spacing: 1px; }

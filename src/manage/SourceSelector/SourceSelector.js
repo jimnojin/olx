@@ -16,12 +16,23 @@ const platforms = [
 
 export default () => {
   return (
-    <div className="source-selector">
-      <div>Select source</div>
+    <div className="row">
+      <div className="col-md-12">
+        <div className="source-selector">
+          <div>Select source</div>
 
-      <Select options={ sources } />
-      <Select options={ platforms } />
-      
-    </div>
+          <Select options={ sources } />
+          <Select options={ platforms } />
+          
+          <button className="btn btn-secondary btn-hollow btn-size-small">
+            <span className="fa fa-plus" />Add data source
+          </button>
+
+          <button className="btn btn-secondary btn-size-small pull-right">
+            View all data sources
+          </button>
+        </div>
+      </div>
+    </div>    
   );
 }

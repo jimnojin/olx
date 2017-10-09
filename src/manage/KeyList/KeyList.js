@@ -4,7 +4,12 @@ import PropTypes from 'prop-types';
 const KeyList = props => {
   const items = props.keys.map(k => {
     const classList = `list-group-item ${k.id === props.selected.id ? 'active' : ''}`;
-    return <li className={ classList } key={ k.id } onClick={ () => props.onSelect(k) }>{ k.name }</li>;
+    return (
+      <li className={ classList } key={ k.id } onClick={ () => props.onSelect(k) }>
+        { k.name }
+        { k.id === props.selected.id ? <span className="fa fa-angle-right" /> : '' }
+      </li>
+    );
   });
 
   return (

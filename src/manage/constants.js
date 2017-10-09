@@ -6,7 +6,6 @@ export const FETCH_SUCCESS = 'manage/FETCH_SUCCESS';
 export const SAVE_KEY = 'manage/SAVE_KEY';
 
 export const SELECT_KEY = 'manage/key/SELECT_KEY';
-export const NEW_KEY = 'manage/key/NEW_KEY';
 export const CANCEL_EDIT = 'manage/key/CANCEL_EDIT';
 export const EDIT_KEY = 'manage/key/EDIT_KEY';
 

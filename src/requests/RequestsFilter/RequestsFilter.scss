@@ -1,22 +1,17 @@
-@import '../../styles/constants.scss';
+@import '../../styles/_constants';
 
-.nav.requests-filter {
-  > li {
-    > a {
-      width: 160px;
-      border-radius: 0;
-      font-family: Avenir;
-      font-size: 16px;
-      text-align: center;
-      color: $col-secondary-normal;
-      background: $col-white;      
-    } 
+.requests-filter {
+  height: 46px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid $col-grey-light;
+  
+  .nav > li:last-child {
+    float: right;
+  }
 
-    &.active > a,
-    > a:hover {
-      color: $col-secondary-normal;
-      background: $col-white;
-      border-bottom: 4px solid $col-secondary-normal;
-    }
-  } 
+  .btn {
+    font-family: Avenir;
+    text-transform: none;
+    letter-spacing: 1px;
+  }
 }

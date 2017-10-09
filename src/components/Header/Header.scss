@@ -1,21 +1,44 @@
-@import '../../styles/constants.scss';
+@import '../../styles/_constants';
 
-.navbar {
+.header.navbar {
   height: 50px;
-
   font-size: 16px;
-
   box-shadow: 0px 2px 10px 0px rgba($col-grey-normal, .75);  
+  border-radius: 0;
+  background: $col-white;
 
   .nav {
     li > a {
-      color: $col-white;
-      background: $col-success-normal;
-
-      &:hover,
-      &.active {
+      padding: 14px;
+      color: $col-success-normal;
+      background: $col-white;
+      
+      &:hover {
         color: $col-white;
         background: $col-success-dark;
+        border: 0;
+      }
+
+      &.active {
+        color: $col-white;
+        background: $col-success-normal;
+        border: 0;
+      }
+    }    
+  }
+
+  .navbar-text {
+    margin-left: 40px;
+
+    .fa {
+      float: right;
+      margin-right: 20px;
+      font-size: 18px;
+      color: $col-success-normal;
+      cursor: pointer;
+  
+      &:hover {
+        color: $col-success-dark;
       }
     }
   }

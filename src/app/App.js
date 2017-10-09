@@ -3,8 +3,8 @@ import { Route } from 'react-router-dom';
 
 import Header from '../components/Header/Header';
 import HomeContainer from '../home/HomeContainer';
-import RequestsContainer from '../requests/RequestsContainer';
-import ManageContainer from '../manage/ManageContainer';
+import { RequestsContainer } from '../requests';
+import { ManageContainer } from '../manage';
 
 const App = () => (
   <div className="App">

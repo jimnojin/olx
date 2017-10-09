@@ -1,4 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab|Roboto+Regular|Avenir');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab|Roboto+Regular|Roboto+Condensed|Avenir');
+@import './_constants';
+@import './_mixins';
+@import './components/_buttons';
+@import './components/_helpers';
+@import './components/_list-group';
+@import './components/_nav';
+@import './components/_panel';
+@import './components/_table';
+@import './components/_textfield';
+@import './components/_well';
 
 body {
   margin: 0;
@@ -8,40 +18,19 @@ body {
   line-height: 1.5;
 
   main {
-    max-width: 890px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 }
 
 h1 {
-  color: #444444;
-  font-family: Avenir;
-  font-size: 48px;
-  font-style: normal;
-  font-stretch: normal;
-  font-weight: 400;
-  text-align: left;
-  line-height: 72px;
+  @include heading(48px, 72px);
 }
 
 h2 {
-  color: #444444;
-  font-family: Avenir;
-  font-size: 40px;
-  font-style: normal;
-  font-stretch: normal;
-  font-weight: 400;
-  text-align: left;
-  line-height: 60px;
+  @include heading(40px, 60px);
 }
 
 h3 {
-  color: #444444;
-  font-family: Avenir;
-  font-size: 32.0px;
-  font-style: normal;
-  font-stretch: normal;
-  font-weight: 400;
-  text-align: left;
-  line-height: 48px;
+  @include heading(32px, 48px);
 }

@@ -1,0 +1,28 @@
+.nav {
+  > li {
+    + li {
+      margin: 0;
+    }
+
+    > a {
+      width: 160px;
+      border-radius: 0;
+      font-family: Avenir;
+      font-size: 16px;
+      text-align: center;
+      color: $col-secondary-normal;
+      background: $col-white;  
+      border-bottom: 2px solid $col-grey-light;
+      cursor: pointer;    
+    } 
+
+    &.active > a,
+    &.active > a:hover,
+    > a:hover {
+      padding-bottom: 8px;
+      color: $col-secondary-normal;
+      background: $col-white;
+      border-bottom: 4px solid $col-secondary-normal;
+    }    
+  } 
+}

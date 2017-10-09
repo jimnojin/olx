@@ -5,11 +5,11 @@ import { connect } from 'react-redux';
 import {
   fetchData,
   filter  
-} from './RequestsActions';
-import RequestsList from './RequestsList';
-import RequestsFilter from './RequestsFilter/RequestsFilter';
-
-import './RequestsContainer.css';
+} from '../actions';
+import { 
+  RequestsList,
+  RequestsFilter
+ } from '../';
 
 class RequestsContainer extends React.Component {
   componentDidMount() {
@@ -26,7 +26,7 @@ class RequestsContainer extends React.Component {
             <h2>Loading...</h2> : 
             <div>
               <RequestsFilter onFilter={ this.props.filter } filterBy={ this.props.filterBy } />
-              <div className="well">Pending requests</div>
+              <div className="well" style={{ margin: 0 }}>Pending requests</div>
               <RequestsList data={ this.props.requests } />
             </div>            
         }

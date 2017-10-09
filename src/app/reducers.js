@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
-import requests from '../requests/RequestsReducers'
+import { RequestsReducers } from '../requests'
 import {
   manageReducer,
   keyReducer
-} from '../manage/ManageReducers';
+} from '../manage';
 
 export default combineReducers({
   routing: routerReducer,
   manage: manageReducer,
   key: keyReducer,
-  requests  
+  requests: RequestsReducers
 });

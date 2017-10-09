@@ -1,0 +1,10 @@
+@import '../../styles/_constants';
+
+.key-edit-view {
+  form {
+    .textfield,
+    select {
+      min-width: 240px;
+    }
+  }
+}
