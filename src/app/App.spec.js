@@ -11,6 +11,6 @@ describe('<App /> Component', () => {
   it('contains Header', () => {
     const wrapper = shallow(<App />);
 
-    expect(wrapper.contains(<Header></Header>));
+    expect(wrapper.contains(<Header />));
   });
 });
