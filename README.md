@@ -1,1 +1,2 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+Uses [React](https://reactjs.org/), [Redux](http://redux.js.org/), [Redux-thunk](https://github.com/gaearon/redux-thunk) and [Jest](https://facebook.github.io/jest/)+[Enzyme](http://airbnb.io/enzyme/) for testing.
