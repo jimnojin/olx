@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import KeyValues from '../KeyEditContainer/KeyValues';
+import { KeyValues } from '../';
 
 import './KeyView.css';
 

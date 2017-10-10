@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import RequestStatus from './RequestStatus';
-import { REQUEST_STATUS } from './constants';
+import { REQUEST_STATUS } from '../constants';
 
 describe('<RequestStatus /> Component', () => {
   it('renders PENDING status text', () => {

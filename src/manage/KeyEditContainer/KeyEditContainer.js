@@ -1,6 +1,7 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import objectValues from 'object.values';
 
 import {
   saveKey,
@@ -13,7 +14,7 @@ import {
   Key,
   KEY_TYPE
 } from '../constants';
-import KeyValues from './KeyValues';
+import { KeyValues } from '../';
 import Select from '../../components/Select/Select';
 
 import './KeyEditContainer.css';
@@ -130,7 +131,7 @@ class KeyEditContainer extends React.Component {
       return <h2>Loading...</h2>;
     }
 
-    const selectItems = Object.values(KEY_TYPE).map(value => {
+    const selectItems = objectValues(KEY_TYPE).map(value => {
       return {
         value,
         text: value
@@ -175,7 +176,7 @@ class KeyEditContainer extends React.Component {
                   }
                 </label>
                 <div className="textfield-area">
-                  <textarea id="description" name="description" className="textfield-input" value={this.state.key.description} onChange={e => this.handleInputChange(e)} />
+                  <textarea id="description" name="description" className="textfield-input" resizable="false" value={this.state.key.description} onChange={e => this.handleInputChange(e)} />
                 </div>
               </div>
             </div>
