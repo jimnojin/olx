@@ -22,15 +22,19 @@ export const isLoading = bool => {
 }
 
 export function fetchData() {
+  const data = require('./keys.mock.json');
+
   return (dispatch) => {
     dispatch(isLoading(true));
+    
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        dispatch(isLoading(false));
+        dispatch(fetchSuccess(data));
 
-    setTimeout(() => {
-      dispatch(isLoading(false));
-
-      const data = require('./keys.mock.json');
-      dispatch(fetchSuccess(data));
-    }, 300);
+        resolve();
+      }, 300);
+    });
   };
 }
 
@@ -58,13 +62,8 @@ export function selectKey(key) {
   }
 }
 
-export function addKey() {
-  const key = new Key();
-
+export function addKey(key = new Key()) {
   return dispatch => {
-    // reset edit state
-    dispatch(cancelEdit());
-
     dispatch(selectKey(key));
     dispatch(editKey(key));
   };
@@ -88,7 +87,7 @@ export function saveKey(key) {
     dispatch(selectKey(key));
 
     /* clear edit flag */
-    dispatch(cancelEdit());
+    // dispatch(cancelEdit());
   };
 }
 

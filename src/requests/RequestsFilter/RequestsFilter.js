@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { REQUEST_STATUS } from '../constants';
 
 import './RequestsFilter.css';
 
-export default props => {
+const RequestFilter = props => {
   const states = Object.keys(REQUEST_STATUS).map(key => {
     const className = props.filterBy === REQUEST_STATUS[key] ? 'active' : '';
 
@@ -31,3 +32,10 @@ export default props => {
     </div>    
   )
 };
+
+RequestFilter.propTypes = {
+  filterBy: PropTypes.oneOf([undefined, REQUEST_STATUS.DENIED, REQUEST_STATUS.PENDING, REQUEST_STATUS.APPROVED]),
+  onFilter: PropTypes.func
+};
+
+export default RequestFilter;

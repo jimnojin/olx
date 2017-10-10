@@ -151,7 +151,7 @@
   .btn.btn-expanded {
     display: block;
     width: 100%; }
-  .btn > .fa + * {
+  .btn > .fa + span {
     margin-left: 8px; }
 
 .error {

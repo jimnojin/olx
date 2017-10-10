@@ -12,15 +12,18 @@ export const isLoading = bool => {
 }
 
 export function fetchData() {
+  const data = require('./requests.mock.json');
+
   return (dispatch) => {
     dispatch(isLoading(true));
 
-    setTimeout(() => {
-      dispatch(isLoading(false));
-      
-      const data = require('./requests.mock.json');
-      dispatch(fetchSuccess(data));
-    }, 1000);
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        dispatch(isLoading(false));
+        dispatch(fetchSuccess(data));
+        resolve();
+      }, 1000);
+    });    
   };
 }
 
